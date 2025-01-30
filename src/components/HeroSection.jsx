@@ -28,7 +28,7 @@ const HeroSection = () => {
           Holistic Homeopathy & Wellness Clinic
         </p>
         <Link
-          href="/appoinment"
+          href="/book-appointment"
           className="bg-[#97b531] hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 animate-fade-in-up delay-200"
         >
           Book Appointment
