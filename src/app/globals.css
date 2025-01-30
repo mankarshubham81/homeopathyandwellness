@@ -19,3 +19,13 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+a, button {
+  transition: color 0.2s ease-in-out;
+}
+
+/* Improve focus states */
+a:focus, button:focus {
+  outline: 2px solid #db2777;
+  outline-offset: 2px;
+}
