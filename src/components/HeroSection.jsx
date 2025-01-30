@@ -6,20 +6,15 @@ import Link from "next/link";
 const HeroSection = () => {
   return (
     <section className="relative w-full h-[90vh] flex items-center justify-center">
-      {/* Video Background */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        <Image
+          src="/hbg2.webp"
+          alt="Clinic Background"
+          fill
           className="w-full h-full object-cover"
-          poster="/banner-fallback.jpg" // Fallback image
-        >
-          <source src="/clinic-video.mp4" type="video/mp4" />
-          <source src="/clinic-video.webm" type="video/webm" />
-          Your browser does not support the video tag.
-        </video>
+          priority
+        />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/30" />
       </div>
@@ -34,7 +29,7 @@ const HeroSection = () => {
         </p>
         <Link
           href="#booking"
-          className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 animate-fade-in-up delay-200"
+          className="bg-[#97b531] hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 animate-fade-in-up delay-200"
         >
           Book Consultation
         </Link>

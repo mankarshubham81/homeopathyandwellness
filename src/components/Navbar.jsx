@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const Navbar = () => {
@@ -24,7 +25,7 @@ const Navbar = () => {
         { name: "FAQs", href: "/faq" }
       ]
     },
-    { name: "Contact", href: "/contact" }
+    // { name: "Contact", href: "/contact" }
   ];
 
   const handleClickOutside = useCallback((event) => {
@@ -67,19 +68,25 @@ const Navbar = () => {
   return (
     <nav 
       ref={navRef}
-      className="bg-[#9D174D] text-white shadow-lg w-full z-40"
+      className="bg-white text-gray-900 shadow-lg w-full z-40"
       aria-label="Main navigation"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link
             href="/"
-            className="text-2xl font-bold hover:text-pink-200 transition-colors duration-200"
+            className="hover:opacity-90 transition-opacity"
             aria-label="Homeopathy and Wellness homepage"
             onClick={closeAllMenus}
           >
-            Homeopathy & Wellness
+            <Image
+              src="/homeopathyandwellnessLogo.jpg"
+              alt="Homeopathy & Wellness Logo"
+              width={180}
+              height={60}
+              className="h-16 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -90,7 +97,7 @@ const Navbar = () => {
                   <div ref={dropdownRef}>
                     <button
                       onClick={() => handleDropdown(link.name)}
-                      className="flex items-center gap-1 px-3 py-2 hover:bg-pink-600 rounded-lg transition-colors"
+                      className="flex items-center gap-1 px-4 py-2 hover:bg-[#A4C639] hover:text-[#333333] rounded-lg transition-colors"
                       aria-expanded={openDropdown === link.name}
                       aria-controls={`dropdown-${link.name}`}
                     >
@@ -103,14 +110,14 @@ const Navbar = () => {
                     {openDropdown === link.name && (
                       <ul
                         id={`dropdown-${link.name}`}
-                        className="absolute top-full left-0 mt-1 w-48 z-50 bg-white text-gray-900 shadow-xl rounded-lg py-2"
+                        className="absolute top-full left-0 mt-1 w-48 z-50 bg-[#F8F8F8] text-[#333333] shadow-xl rounded-lg py-2"
                         role="menu"
                       >
                         {link.subLinks.map((subLink) => (
                           <li key={subLink.name}>
                             <Link
                               href={subLink.href}
-                              className="block px-4 py-2 hover:bg-pink-50 transition-colors"
+                              className="block px-4 py-2 hover:bg-[#DDD6C5] transition-colors"
                               role="menuitem"
                             >
                               {subLink.name}
@@ -123,7 +130,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     href={link.href}
-                    className="px-3 py-2 hover:bg-pink-600 rounded-lg transition-colors"
+                    className="px-4 py-2 hover:bg-[#A4C639] hover:text-[#333333] rounded-lg transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -131,16 +138,16 @@ const Navbar = () => {
               </div>
             ))}
             <Link
-              href="/book-appointment"
-              className="ml-4 px-4 py-2 bg-white text-pink-700 rounded-lg hover:bg-gray-100 font-semibold transition-colors"
+              href="/contact"
+              className="ml-4 px-6 py-3 bg-[#A4C639] text-[#333333] rounded-lg hover:bg-[#C5D67A] font-semibold transition-colors"
             >
-              Book Appointment
+              Contact
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 hover:text-pink-200"
+            className="md:hidden p-2 hover:text-[#A4C639]"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
@@ -151,7 +158,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {menuOpen && (
-        <div className="md:hidden bg-[#9D174D] h-screen overflow-y-auto">
+        <div className="md:hidden bg-[#a4cfa8] h-screen overflow-y-auto">
           <div className="px-4 pt-2 pb-3 space-y-1">
             {navLinks.map((link) => (
               <div key={link.name} className="relative">
@@ -159,7 +166,7 @@ const Navbar = () => {
                   <div>
                     <button
                       onClick={() => handleMobileDropdown(link.name)}
-                      className="w-full flex justify-between items-center px-3 py-2 hover:bg-pink-600 rounded-md"
+                      className="w-full flex justify-between items-center px-3 py-2 hover:bg-[#A4C639] hover:text-[#333333] rounded-md"
                       aria-expanded={openMobileDropdown === link.name}
                       aria-controls={`mobile-dropdown-${link.name}`}
                     >
@@ -178,7 +185,7 @@ const Navbar = () => {
                           <li key={subLink.name}>
                             <Link
                               href={subLink.href}
-                              className="block px-3 py-2 hover:bg-pink-600 rounded-md"
+                              className="block px-3 py-2 hover:bg-[#A4C639] hover:text-[#333333] rounded-md"
                               onClick={closeAllMenus}
                             >
                               {subLink.name}
@@ -191,7 +198,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     href={link.href}
-                    className="block px-3 py-2 hover:bg-pink-600 rounded-md"
+                    className="block px-3 py-2 hover:bg-[#A4C639] hover:text-[#333333] rounded-md"
                     onClick={closeAllMenus}
                   >
                     {link.name}
@@ -201,7 +208,7 @@ const Navbar = () => {
             ))}
             <Link
               href="/book-appointment"
-              className="block px-3 py-2 bg-white text-pink-700 rounded-md mt-4 text-center font-semibold"
+              className="block px-3 py-3 bg-[#A4C639] text-[#333333] rounded-md mt-4 text-center font-semibold hover:bg-[#C5D67A]"
               onClick={closeAllMenus}
             >
               Book Appointment

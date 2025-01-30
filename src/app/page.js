@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Announcement Banner */}
-      <div className="bg-green-600 text-white px-4 py-2 flex flex-col md:flex-row justify-between items-center text-center">
+      {/* <div className="bg-green-600 text-white px-4 py-2 flex flex-col md:flex-row justify-between items-center text-center">
         <p className="text-sm md:text-base mb-2 md:mb-0">
           Please book appointment before arriving!
         </p>
@@ -24,7 +24,7 @@ export default function Home() {
         >
           Instant Appointment
         </Link>
-      </div>
+      </div> */}
 
       <Navbar />
       <main>
