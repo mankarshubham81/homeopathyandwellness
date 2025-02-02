@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,7 +21,7 @@ const Footer = () => {
                 alt="Homeopathy & Wellness Logo"
                 width={200}
                 height={70}
-                className="h-16 w-auto mb-4"
+                className="h-16 w-auto mb-4 rounded-sm"
               />
             </Link>
             <p className="text-sm leading-relaxed">

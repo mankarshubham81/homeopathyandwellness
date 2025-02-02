@@ -9,6 +9,9 @@ const DoctorInfo = dynamic(() => import("../components/DoctorInfo"));
 const Services = dynamic(() => import("../components/Services"));
 const GoogleMap = dynamic(() => import("../components/GoogleMap.jsx"));
 const Footer = dynamic(() => import("../components/Footer"));
+// import testimonialsData from "../data/testimonials" 
+import Testimonials from "@/components/Testimonials";
+import VideoSection from './../components/VideoSection';
 
 export default function Home() {
   return (
@@ -31,6 +34,13 @@ export default function Home() {
         <HeroSection />
         <DoctorInfo />
         <Services />
+        <Testimonials />
+        <VideoSection />
+{/* <VideoSection videos={[
+  { id: 'VIDEO_ID_1', title: 'Video 1', duration: '5:00' },
+  { id: 'VIDEO_ID_2', title: 'Video 2', duration: '6:30' },
+  // ...
+]} /> */}
         <GoogleMap />
       </main>
       <Footer />

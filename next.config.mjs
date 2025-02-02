@@ -1,13 +1,44 @@
+// Import @next/mdx and remark-unwrap-images
+import nextMDX from "@next/mdx";
+import remarkUnwrapImages from "remark-unwrap-images";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-      domains: ['homeopathyandwellness.com'],
+  images: {
+    domains: [
+      "homeopathyandwellness.com",
+      "images.unsplash.com",
+      "i.ytimg.com",
+      "player.vimeo.com",
+    ],
+    formats: ["image/avif", "image/webp"],
+  },
+  experimental: {
+    serverComponentsExternalPackages: ["@react-markdown"],
+  },
+  remotePatterns: [
+    {
+      protocol: "https",
+      hostname: "images.unsplash.com",
     },
-  };
-  
-  export default nextConfig;
-  
-//   /** @type {import('next').NextConfig} */
-// const nextConfig = {};
+    {
+      protocol: "https",
+      hostname: "i.ytimg.com",
+    },
+    {
+      protocol: "https",
+      hostname: "player.vimeo.com",
+    },
+  ],
+};
 
-// export default nextConfig;
+// Configure MDX
+const withMDX = nextMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [remarkUnwrapImages],
+  },
+});
+
+// Export the merged config
+export default withMDX(nextConfig);
