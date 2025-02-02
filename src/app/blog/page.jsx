@@ -1,12 +1,12 @@
 "use client";
-
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import LoadingSkeleton from '@/components/LoadingSkeleton';
 import { getAllPosts } from '@/lib/posts';
+import { Suspense } from 'react'; // Import Suspense
 
-export default function BlogPage() {
+const BlogContent = () => {
   const searchParams = useSearchParams();
   const searchQuery = searchParams.get('query') || '';
   const [posts, setPosts] = useState([]);
@@ -51,7 +51,6 @@ export default function BlogPage() {
           }}
         />
       </div>
-
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredPosts.map(post => (
           <article key={post.id} className="bg-white rounded-xl shadow-md overflow-hidden">
@@ -68,12 +67,19 @@ export default function BlogPage() {
           </article>
         ))}
       </div>
-
       {filteredPosts.length === 0 && (
         <div className="text-center text-gray-500 py-12">
           No articles found matching your search criteria.
         </div>
       )}
     </div>
+  );
+};
+
+export default function BlogPage() {
+  return (
+    <Suspense fallback={<LoadingSkeleton />}>
+      <BlogContent />
+    </Suspense>
   );
 }
