@@ -85,7 +85,7 @@ const TestimonialCarousel = () => {
       {/* Navigation Buttons (Overlapping Content) */}
       <button
         onClick={handlePrev}
-        className="absolute top-1/2 left-8 transform -translate-y-1/2 p-3 bg-white rounded-full shadow-md text-gray-700 hover:text-gray-900 transition z-10"
+        className="absolute top-1/2.5 left-8 transform -translate-y-1/2 p-3 bg-white rounded-full shadow-md text-gray-700 hover:text-gray-900 transition z-10"
         aria-label="Previous testimonial"
       >
         <svg
@@ -100,7 +100,7 @@ const TestimonialCarousel = () => {
       </button>
       <button
         onClick={handleNext}
-        className="absolute top-1/2 right-8 transform -translate-y-1/2 p-3 bg-white rounded-full shadow-md text-gray-700 hover:text-gray-900 transition z-10"
+        className="absolute top-1/2.5 right-8 transform -translate-y-1/2 p-3 bg-white rounded-full shadow-md text-gray-700 hover:text-gray-900 transition z-10"
         aria-label="Next testimonial"
       >
         <svg
