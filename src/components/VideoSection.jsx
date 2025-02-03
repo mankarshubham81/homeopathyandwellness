@@ -84,7 +84,7 @@ const VideoCarousel = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold text-center mb-6">Video Carousel</h2>
+      {/* <h2 className="text-2xl font-bold text-center mb-6">Video Carousel</h2> */}
       <Slider {...settings} ref={sliderRef} className="relative">
         {videos.map((video, index) => (
           <div key={index} className="px-2">
