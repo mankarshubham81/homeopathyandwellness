@@ -3,7 +3,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
-const Navbar = dynamic(() => import("../components/Navbar"), { ssr: false });
+// const Navbar = dynamic(() => import("../components/Navbar"), { ssr: false });
 const HeroSection = dynamic(() => import("../components/HeroSection"));
 const DoctorInfo = dynamic(() => import("../components/DoctorInfo"));
 const Services = dynamic(() => import("../components/Services"));
@@ -29,7 +29,7 @@ export default function Home() {
         </Link>
       </div> */}
 
-      <Navbar />
+      {/* <Navbar /> */}
       <main>
         <HeroSection />
         <DoctorInfo />

@@ -10,6 +10,7 @@ const nextConfig = {
       "images.unsplash.com",
       "i.ytimg.com",
       "player.vimeo.com",
+      "randomuser.me",
     ],
     formats: ["image/avif", "image/webp"],
   },
@@ -28,6 +29,10 @@ const nextConfig = {
     {
       protocol: "https",
       hostname: "player.vimeo.com",
+    },
+    {
+      protocol: "https",
+      hostname: "randomuser.me"
     },
   ],
 };
