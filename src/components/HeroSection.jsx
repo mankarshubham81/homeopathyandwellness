@@ -36,59 +36,6 @@ const HeroSection = () => {
             At our Homeopathy Clinic, we focus on personalized treatments to restore balance and promote natural healing. Experience the power of holistic care tailored just for you.
           </p>
           {/* Key Features */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-8 animate-fade-in-up delay-300">
-            <div className="flex items-center gap-2 text-gray-300">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-green-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>Personalized Treatments</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-300">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-green-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>Holistic Healing Approach</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-300">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-green-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>Natural Remedies</span>
-            </div>
-          </div>
           {/* Call-to-Actions */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 animate-fade-in-up delay-400">
             <Link
