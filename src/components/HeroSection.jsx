@@ -24,7 +24,7 @@ export default function HeroSection() {
       {/* <div className="absolute inset-0 bg-black bg-opacity-20 -z-10" /> */}
 
       {/* Content Container */}
-      <div className="relative z-10 container mx-auto px-4 flex my-4 flex-col md:flex-row text-center justify-between gap-4">
+      <div className="relative z-10 container mx-auto md:mx-24 px-4 flex my-4 flex-col md:flex-row text-center md:justify-between gap-8 md:gap-4">
         
         {/* Left Side: Logo + Domain */}
         <div className="flex flex-col items-center md:items-start md:mt-4">
