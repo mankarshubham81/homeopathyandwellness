@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -51,9 +52,12 @@ export default function HeroSection() {
             Get in touch with our team to discuss.
           </p>
           <div className="text-center items-center">
-          <button className="bg-[#dbfbb3] font-semibold py-3 px-7 rounded-full shadow-md hover:bg-lime-600 transition-colors">
-            Book Appointment
-          </button>
+          <Link
+              href="/book-appointment"
+              className="bg-[#dbfbb3] font-semibold py-3 px-7 rounded-full shadow-md hover:bg-lime-600 transition-colors"
+            >
+              Book Appointment
+            </Link>
           </div>
         </div>
       </div>

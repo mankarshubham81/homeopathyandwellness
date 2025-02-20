@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const Navbar = () => {
