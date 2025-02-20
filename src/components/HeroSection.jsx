@@ -1,60 +1,62 @@
 "use client";
+
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 
-const HeroSection = () => {
+export default function HeroSection() {
   return (
-    <section className="relative w-full h-[90vh] flex items-center justify-center">
+    <section
+      className="relative w-full h-[90vh] flex"
+      aria-label="Hero Section"
+    >
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      <div className="absolute inset-0 z-0 ">
         <Image
-          src="/herobg1.jpg"
-          alt="Clinic Background"
+          src="/herobg1.png" // Replace with your actual background image
+          alt="Hero Background"
           fill
           className="w-full h-full object-cover"
           priority
         />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/30" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center text-white px-4">
-        {/* Transparent Background for Content */}
-        <div className="bg-black/40 p-8 rounded-lg shadow-lg backdrop-blur-sm max-w-3xl mx-auto">
-          {/* Main Title */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">
-            LITTLE INDIA TAMPINES
+      {/* Optional Overlay for better text contrast */}
+      {/* <div className="absolute inset-0 bg-black bg-opacity-20 -z-10" /> */}
+
+      {/* Content Container */}
+      <div className="relative z-10 container mx-auto px-4 flex my-4 flex-col md:flex-row text-center justify-between gap-4">
+        
+        {/* Left Side: Logo + Domain */}
+        <div className="flex flex-col items-center md:items-start md:mt-4">
+          {/* Replace with your actual logo image */}
+          <Image 
+            src="/homeopathyandwellnessLogo.jpg" 
+            alt="Homeopathic Cure Logo"
+            width={140} 
+            height={70}
+            className="mb-2 rounded-lg"
+          />
+          <p className="text-white font-semibold text-sm md:text-base">
+            Homeopathyandwellness.com
+          </p>
+        </div>
+
+        {/* Right Side: Headline, Subtext, CTA */}
+        <div className="text-center items-center md:text-right md:mt-8  my-2 max-w-md">
+          <h1 className="text-3xl md:text-5xl font-bold text-center items-center text-white mb-4">
+            Get Expert Medical Consultation!
           </h1>
-          {/* Tagline */}
-          <p className="text-lg md:text-xl font-medium text-gray-300 mb-6 animate-fade-in-up delay-100">
-            Your Path to Holistic Healing & Wellness
+          <p className="text-white text-center items-center text-base md:text-lg mb-6">
+            Our doctors provide expert medical advice and consultation.
+            Get in touch with our team to discuss.
           </p>
-          {/* Description */}
-          <p className="text-base md:text-lg mb-8 animate-fade-in-up delay-200">
-            At our Homeopathy Clinic, we focus on personalized treatments to restore balance and promote natural healing. Experience the power of holistic care tailored just for you.
-          </p>
-          {/* Key Features */}
-          {/* Call-to-Actions */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 animate-fade-in-up delay-400">
-            <Link
-              href="/book-appointment"
-              className="bg-[#97b531] hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300"
-            >
-              Book Appointment
-            </Link>
-            <Link
-              href="/about"
-              className="bg-transparent border border-white hover:bg-white hover:text-black text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300"
-            >
-              Learn More
-            </Link>
+          <div className="text-center items-center">
+          <button className="bg-[#dbfbb3] font-semibold py-3 px-7 rounded-full shadow-md hover:bg-lime-600 transition-colors">
+            Book Appointment
+          </button>
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default HeroSection;
+}

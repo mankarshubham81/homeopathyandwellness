@@ -54,7 +54,7 @@ const ContactPage = () => {
             </p>
             <p className="text-gray-700">
               <span className="font-medium">WhatsApp:</span>{' '}
-              <a href="https://api.whatsapp.com/send?phone=6588933212&text=Hello%20Doctor,%20I%20would%20like%20to%20book%20appointment.%20Please%20suggest%20your%20suitable%20timing.%20" className="text-blue-600 hover:underline">
+              <a href="https://api.whatsapp.com/send?phone=6588933212&text=Hello%20Doctor,%20I%20would%20like%20to%20book%20appointment.%20Please%20suggest%20your%20suitable%20timing.%" className="text-blue-600 hover:underline">
                 Click here to send a message
               </a>
             </p>

@@ -26,22 +26,15 @@ a, button {
 
 /* Improve focus states */
 a:focus, button:focus {
-  outline: 2px solid #db2777;
+  outline: 2px solid #2b6619;
   outline-offset: 2px;
 }
 
-/* globals.css */
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

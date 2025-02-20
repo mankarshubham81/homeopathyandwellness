@@ -26,7 +26,7 @@ const Navbar = () => {
         { name: "FAQs", href: "/faq" }
       ]
     },
-    // { name: "Contact", href: "/contact" }
+    { name: "Contact Us", href: "/contact" }
   ];
 
   const handleClickOutside = useCallback((event) => {
@@ -69,7 +69,7 @@ const Navbar = () => {
   return (
     <nav 
       ref={navRef}
-      className="bg-white text-gray-900 shadow-lg w-full z-40"
+      className="bg-[#24562B] text-white shadow-lg w-full z-40"
       aria-label="Main navigation"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,13 +81,14 @@ const Navbar = () => {
             aria-label="Homeopathy and Wellness homepage"
             onClick={closeAllMenus}
           >
-            <Image
+            Little India Tampines
+            {/* <Image
               src="/homeopathyandwellnessLogo.jpg"
               alt="Homeopathy & Wellness Logo"
               width={180}
               height={60}
               className="h-16 w-auto"
-            />
+            /> */}
           </Link>
 
           {/* Desktop Navigation */}
@@ -138,12 +139,12 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            <Link
+            {/* <Link
               href="/contact"
               className="ml-4 px-6 py-3 bg-[#A4C639] text-[#333333] rounded-lg hover:bg-[#C5D67A] font-semibold transition-colors"
             >
               Contact
-            </Link>
+            </Link> */}
           </div>
 
           {/* Mobile Menu Button */}
